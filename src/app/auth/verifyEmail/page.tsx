@@ -1,21 +1,22 @@
-import { Link, useNavigate } from "react-router-dom";
+"use client"
 import { VerifyEmailContainer } from "./VerifyEmail.style";
 import { useState, useEffect, useCallback } from "react";
 import { sendEmailVerification } from "firebase/auth";
-import { useAuthContext } from "../../contexts";
+import { useAuthContext } from "../../../contexts";
+import { useRouter } from "next/navigation";
 
-export function VerifyEmail() {
+export default function VerifyEmail() {
     
     const [isResendEmail, setIsResendEmail] = useState(false);
     const { authState } = useAuthContext();
     const [seconds, setSeconds] = useState(0);
     const user = authState.currentUser;
     var isWaiting = !user || seconds > 0;
-    const navigate = useNavigate();
+    const router = useRouter();
 
     if (user) {
         if (user.emailVerified) {
-            navigate("/feed");
+            router.push("/feed");
         }
     }
 
