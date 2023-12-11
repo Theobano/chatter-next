@@ -1,3 +1,4 @@
+"use client"
 import { ReasonCardContainer } from "./ReasonCard.style";
 
 interface ReasonCardProps {

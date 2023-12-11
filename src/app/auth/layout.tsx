@@ -1,6 +1,5 @@
-"use client"
+"use client";
 import { AuthLayoutContainer } from "./layout.style";
-import splash from "./auth-background-image.svg";
 
 export default function AuthLayout({
   children,

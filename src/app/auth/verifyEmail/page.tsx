@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import { VerifyEmailContainer } from "./VerifyEmail.style";
 import { useState, useEffect, useCallback } from "react";
 import { sendEmailVerification } from "firebase/auth";
@@ -6,21 +6,18 @@ import { useAuthContext } from "../../../contexts";
 import { useRouter } from "next/navigation";
 
 export default function VerifyEmail() {
-    
-    const [isResendEmail, setIsResendEmail] = useState(false);
-    const { authState } = useAuthContext();
-    const [seconds, setSeconds] = useState(0);
-    const user = authState.currentUser;
-    var isWaiting = !user || seconds > 0;
-    const router = useRouter();
+  const [isResendEmail, setIsResendEmail] = useState(false);
+  const { authState } = useAuthContext();
+  const [seconds, setSeconds] = useState(0);
+  const user = authState.currentUser;
+  var isWaiting = !user || seconds > 0;
+  const router = useRouter();
 
-    if (user) {
-        if (user.emailVerified) {
-            router.push("/feed");
-        }
+  if (user) {
+    if (user.emailVerified) {
+      router.push("/feed");
     }
-
-
+  }
 
   const sendVerificationMail = useCallback(async () => {
     sendEmailVerification(user);
@@ -84,9 +81,7 @@ export default function VerifyEmail() {
       <button disabled={isWaiting} onClick={onButtonClick}>
         {isResendEmail ? "Resend email" : "Verify email"}
       </button>
-      <p>
-        Refresh this page once you have verified your email address.
-      </p>
+      <p>Refresh this page once you have verified your email address.</p>
     </VerifyEmailContainer>
   );
 }

@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import { useRef } from "react";
 import { RegisterContainer } from "./Register.style";
 import { useAuthContext } from "../../../../contexts";
