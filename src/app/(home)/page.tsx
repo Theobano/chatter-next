@@ -10,6 +10,7 @@ import GetStartedImage1 from "./images/get-started-image-1.svg";
 import GetStartedImage2 from "./images/get-started-image-2.svg";
 import GetStartedImage3 from "./images/get-started-image-3.svg";
 import Link from "next/link";
+import Image from "next/image";
 
 export default function Home() {
   return (
@@ -45,7 +46,7 @@ export default function Home() {
               </p>
             </div>
             <div className="about-chatter-image">
-              <img src={AboutChatterImage.src} alt="About Chatter" />
+              <Image src={AboutChatterImage.src} alt="About Chatter" />
             </div>
           </div>
         </section>
@@ -80,7 +81,7 @@ export default function Home() {
         </section>
         <section className="section join-chatter">
           <div>
-            <img src={AdebobolaMuhydeenImage.src} alt="Adebobola Muhydeen" />
+            <Image src={AdebobolaMuhydeenImage.src} alt="Adebobola Muhydeen" />
           </div>
           <div className="text">
             <div>
@@ -102,11 +103,11 @@ export default function Home() {
         <section className="section get-started">
           <div>
             <div>
-              <img src={GetStartedImage1.src} alt="human" />
-              <img src={GetStartedImage2.src} alt="human" />
+              <Image src={GetStartedImage1.src} alt="human" />
+              <Image src={GetStartedImage2.src} alt="human" />
             </div>
             <div>
-              <img src={GetStartedImage3.src} alt="human" />
+              <Image src={GetStartedImage3.src} alt="human" />
             </div>
           </div>
           <div>

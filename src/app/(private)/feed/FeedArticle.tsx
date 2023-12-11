@@ -6,6 +6,7 @@ import {
   OpenBookIcon,
 } from "../../../assets/icons";
 import { FeedArticleContainer } from "./FeedArticle.style";
+import Image from "next/image";
 
 interface FeedArticleProps {
   article: Article;
@@ -43,7 +44,7 @@ export function FeedArticle({ article }: FeedArticleProps) // {
       <Link href={`/blog/${article.id}`}>
         <div className="feed-article-header">
           <div className="feed-article-author">
-            <img src={article.author.profileImage} alt="author" />
+            <Image src={article.author.profileImage} alt="author" />
             <div className="feed-article-author-info">
               <h3>
                 {article.author.firstName} {article.author.lastName}
@@ -66,7 +67,7 @@ export function FeedArticle({ article }: FeedArticleProps) // {
         </div>
         <div className="feed-article-short-text">{displayText}</div>
         <div className="feed-article-featured-image">
-          <img src={article.featuredImage} alt="featured" />
+          <Image src={article.featuredImage} alt="featured" />
         </div>
         <div className="feed-article-footer">
           <div className="feed-article-comments">
